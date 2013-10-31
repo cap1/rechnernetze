@@ -14,3 +14,7 @@ Dies geschieht idealerweise mit kurzer Latenz zwischen Unkomprimierten und kompr
 Dabei ist zu beachten das die zeitliche Synchronisation zwischen den verschiedenen Teilen der multimedialen Daten. 
 Grundsätzlich unterscheidet man zwischen verlustbehafteten (lossy)
 und verlustfreien (loss-less) Kompressionsverfahren.
+
+Weiterhin werden 
+
+## Huffman Kodierung
