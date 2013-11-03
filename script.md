@@ -35,9 +35,22 @@ Weiterhin werden die Kompressionsalgorithmen die folgende vier Kategorien aufget
 Diese werden im folgenden Kurz vorgestellt.
 
 ### Entropie Kodierung
-	Diese Art der Kodierung ist immer verlustfrei und erreicht Kompressionen um den Faktor 3.
-	Die Semantik der Daten spielt für sie keine Rolle.
-	Ein typisches Beispiel ist die Lauflängekodierung wie beim Fax.
+Diese Art der Kodierung ist immer verlustfrei und erreicht Kompressionen um den Faktor 3.
+Die Semantik der Daten spielt für sie keine Rolle.
+Ein typisches Beispiel ist die Lauflängekodierung wie beim Fax.
 
+### Qullen Kodierung
+Verfahren der Quellen Kodierung können,
+auch in Abhängigkeit von der Wahl der Parameter,
+verlustfrei oder verlustbehaftet sein.
+Die Semantik ist wichtig für die verlustbehaftete Kompression.
+Die Kompressionsraten können aber größer als 10 sein 
+und sind somit geeignet für das Internet.
+Die Kompression beruht oft auf der *Diskreten Cosinus Transformation*
+und dem Weglassen von Fourierkoeffizienten mit hoher Frequenz und kleiner Amplitude.
+Die Kompression führt bei Bildern zu unschaerfe bei feinen Details,
+was in der Regel kaum auffält sofern nicht zu stark komprimiert wird.
+
+Ein typisches Beispiel für Quellen Kodierung ist das Bildformat JPEG.
 
 #### Huffman Kodierung
