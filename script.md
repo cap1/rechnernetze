@@ -1,5 +1,6 @@
-﻿Vorlesungen zu Rechnernetze II
-Eine Zusammenfassung aus dem Wintersemester 2013/2014
+﻿% Vorlesungen zu Rechnernetze II \
+ *Eine Zusammenfassung aus dem Wintersemester 2013/2014*
+% Christian Müller
 
 # ISO Layer 6
 Diese Schicht wird im Internet durch zahlreiche Einezellösungen nachgebaut,
@@ -49,6 +50,14 @@ Gliederung der Entropie Kodierung:
 			- Huffman Kodierung
 			- Ziv-Lempel Kode
 			- Arithmetischer Kode
+
+#### Lauflängenkodierung
+Wiederholen sich identische Zeichen im Kode häufig,
+lassen sie sich mit einer Lauflängenkodierung komprimieren.
+Dies geschiet durch das Übertragen der Häufigkeit der identischen Zeichen
+an statt der Zeichen selbst.
+Entweder werden dazu Steuerzeichen verwendet 
+oder Byte-Stuffing kommt zum Einsatz.
 
 #### Huffman Kodierung
 
