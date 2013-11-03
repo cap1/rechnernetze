@@ -61,4 +61,9 @@ Beispielsweise sehr leise Töne die gleichzeitig
 oder kurz nach lauten Tönen folgen da sie vom Ohr nicht wargenommen werden können.
 Dies geschieht beispielsweise bei MP3s oder der Subbandkodierung.
 
+### Hybride Kodierung
+Die Kombination mehrer der vorher vorgestellten Verfahren.
+Dies sind in der Kombination häufig verlustbehaftet.
+Bekannte Verfahren sind JPEG und MPEG.
+
 #### Huffman Kodierung
