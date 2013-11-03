@@ -8,6 +8,14 @@ Daher wird die Funktion der Schicht 6,
 die Kompression der Daten,
 anhand von Lösungen dargestellt die im Internet in Layer 7 eingesetzt werden.
 
+## Multimediale Daten
+Bei Multimedialen Daten werden mindestens ein zeitdiskretes und
+ein zeitkontinuierliches Medium für die Darstellung von Information verwendet.
+Das heisst die Anzahl der gleichzeitig verwendeten Medien ist immmer >= 2.
+Problematisch ist die zeitliche Synchronisation der Medien,
+was durch Echtzeitprotkolle ermöglicht wird.
+Diese sind aber nicht durch das Internet implementiert.
+
 ## Prinzip der Datenkompression
 Durch die Datenkompression wird die Datenrate des Multimedialen Ausgangssignlas reduziert.
 Dies geschieht idealerweise mit kurzer Latenz zwischen Unkomprimierten und komprimierten Daten.
