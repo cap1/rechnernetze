@@ -39,6 +39,19 @@ Diese Art der Kodierung ist immer verlustfrei und erreicht Kompressionen um den 
 Die Semantik der Daten spielt für sie keine Rolle.
 Ein typisches Beispiel ist die Lauflängekodierung wie beim Fax.
 
+Gliederung der Entropie Kodierung:
+
+	* Entropie Kodierung
+		+ Lauflängenkodierung
+		+ Color-Lookup-Tabke Kodierung
+		+ Statistische Kodierung
+			- Morse Kode
+			- Huffman Kodierung
+			- Ziv-Lempel Kode
+			- Arithmetischer Kode
+
+#### Huffman Kodierung
+
 ### Qullen Kodierung
 Verfahren der Quellen Kodierung können,
 auch in Abhängigkeit von der Wahl der Parameter,
@@ -50,8 +63,17 @@ Die Kompression beruht oft auf der *Diskreten Cosinus Transformation*
 und dem Weglassen von Fourierkoeffizienten mit hoher Frequenz und kleiner Amplitude.
 Die Kompression führt bei Bildern zu unschaerfe bei feinen Details,
 was in der Regel kaum auffält sofern nicht zu stark komprimiert wird.
-
 Ein typisches Beispiel für Quellen Kodierung ist das Bildformat JPEG.
+
+Gliederung der Quellenkodierung:
+
+	* Quellen Kodierung
+		+ Prädikative Kodierung
+		+ Vekorquantisierung
+		+ Transformations Kodierung
+			- Diskrete Fouriertransfromation
+			- Schnelle Fouriertransformation (FFT)
+			- Diskrete Cosinustransformation
 
 ### Kanal Kodierung
 Mit der verlustbehafteten Kanal Kodierung können Kompressionsraten von über 10 erzielt werden.
@@ -61,9 +83,20 @@ Beispielsweise sehr leise Töne die gleichzeitig
 oder kurz nach lauten Tönen folgen da sie vom Ohr nicht wargenommen werden können.
 Dies geschieht beispielsweise bei MP3s oder der Subbandkodierung.
 
+Gliederung der Kanalkodierung
+
+	* Kanal Kodierung
+		+ Subsampling
+		+ Subband Kodierung
+
 ### Hybride Kodierung
 Die Kombination mehrer der vorher vorgestellten Verfahren.
 Dies sind in der Kombination häufig verlustbehaftet.
 Bekannte Verfahren sind JPEG und MPEG.
 
-#### Huffman Kodierung
+Verfahren der Hybriden Kodierung
+
+	* Hybride Kodierung
+		+ JPEG
+		+ MPEG1, 2, 4, 7
+		+ H.261, ...
