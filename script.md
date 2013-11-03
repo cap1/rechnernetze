@@ -53,4 +53,12 @@ was in der Regel kaum auffält sofern nicht zu stark komprimiert wird.
 
 Ein typisches Beispiel für Quellen Kodierung ist das Bildformat JPEG.
 
+### Kanal Kodierung
+Mit der verlustbehafteten Kanal Kodierung können Kompressionsraten von über 10 erzielt werden.
+Dazu werden Einzelne Teile der Daten weggelasen,
+deren physiologische Wirkung als Teil des Datenstromes nicht von Bedeutung sind.
+Beispielsweise sehr leise Töne die gleichzeitig
+oder kurz nach lauten Tönen folgen da sie vom Ohr nicht wargenommen werden können.
+Dies geschieht beispielsweise bei MP3s oder der Subbandkodierung.
+
 #### Huffman Kodierung
