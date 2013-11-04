@@ -64,9 +64,10 @@ oder Byte-Stuffing kommt zum Einsatz.
 Huffmann Kodierung erreicht verlustfrei eine Kompressionsrate um etwa 40%.
 Die Kodewörter müssen *präfixfrei* sein,
 das heisst das kein Kodewort zugleich Angang eines anderen Kodewortes sein darf.
-Dies wird erreicht durch einen *Entscheidungsbaum*.
+Dies wird erreicht durch einen Entscheidungsbaum.
 
-\paragraph{Ein Entscheidungsbaum} ist ein Binärbaum, 
+#### Entscheidungsbaum {-}
+Ein Entscheidungsbaum ist ein Binärbaum, 
 dessen Kanten mit 1 oder 0 beschriftet sind.
 Jeder Pfad von der Wurzel zu einem Blatt stellt ein Kodewort dar.
 So ergibt sich der Wert des Kodewors aus der Aneinanderreihnung der
@@ -75,7 +76,23 @@ Die inneren Knoten sind mit der Häufigkeit des Auftretens der kodierten
 Zeichen im darunterliegenden Teilbaum.
 Ziel iste es den häufigsten Buchstaben die kürzesten Pfade zuzuweisen,
 den seltensten Buchstaben den längsten
-und dabei die präfixfreiheit der Kodeworte bewahren.
+und dabei die Präfixfreiheit der Kodeworte bewahren.
+
+Bei der Huffmann Kodierung wird der Binärbaum rekursiv von den Blättern zur Wurzel aufgebaut.
+Begonnen wird mit den beiden seltensten Zeichen,
+sie sind dienen 2 benachbarten Blättern als Beschriftung,
+hiebei sind Mehrdeutigkeiten möglich
+und es könnnen mehrer gleichwertige Binärbäume endstehen.
+Die summierte Häufigkeit des Teilbaumes dient als Knotenmarkierung.
+Eine Kante wird mit 0,
+die andere mit 1 beschriftet.
+Mit den nächsthäufigen Zeichen und dem Teilbaum wird der Baum
+nun weiter aufgebaut bis keine Zeichen mehr Übrig sind.
+
+Das Verfahren stellt die Präfixfreitheit der Kodeworte sicher
+und erzeugt sie in einer eindeutigen Weise.
+Zur Kommunikation wird dabei zunächst das Kodebuch übertragen.
+
 
 ## Qullen Kodierung
 Verfahren der Quellen Kodierung können,
