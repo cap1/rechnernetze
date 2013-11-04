@@ -2,6 +2,7 @@
  *Eine Zusammenfassung aus dem Wintersemester 2013/2014*
 % Christian Müller
 
+
 # ISO Layer 6
 Diese Schicht wird im Internet durch zahlreiche Einezellösungen nachgebaut,
 da sie nicht implementiert wird.
@@ -35,7 +36,7 @@ Weiterhin werden die Kompressionsalgorithmen die folgende vier Kategorien aufget
 
 Diese werden im folgenden Kurz vorgestellt.
 
-### Entropie Kodierung
+## Entropie Kodierung
 Diese Art der Kodierung ist immer verlustfrei und erreicht Kompressionen um den Faktor 3.
 Die Semantik der Daten spielt für sie keine Rolle.
 Ein typisches Beispiel ist die Lauflängekodierung wie beim Fax.
@@ -59,9 +60,24 @@ an statt der Zeichen selbst.
 Entweder werden dazu Steuerzeichen verwendet 
 oder Byte-Stuffing kommt zum Einsatz.
 
-#### Huffman Kodierung
+### Huffman Kodierung
+Huffmann Kodierung erreicht verlustfrei eine Kompressionsrate um etwa 40%.
+Die Kodewörter müssen *präfixfrei* sein,
+das heisst das kein Kodewort zugleich Angang eines anderen Kodewortes sein darf.
+Dies wird erreicht durch einen *Entscheidungsbaum*.
 
-### Qullen Kodierung
+\paragraph{Ein Entscheidungsbaum} ist ein Binärbaum, 
+dessen Kanten mit 1 oder 0 beschriftet sind.
+Jeder Pfad von der Wurzel zu einem Blatt stellt ein Kodewort dar.
+So ergibt sich der Wert des Kodewors aus der Aneinanderreihnung der
+auf dem Pfad durchlaufenen Kanten.
+Die inneren Knoten sind mit der Häufigkeit des Auftretens der kodierten 
+Zeichen im darunterliegenden Teilbaum.
+Ziel iste es den häufigsten Buchstaben die kürzesten Pfade zuzuweisen,
+den seltensten Buchstaben den längsten
+und dabei die präfixfreiheit der Kodeworte bewahren.
+
+## Qullen Kodierung
 Verfahren der Quellen Kodierung können,
 auch in Abhängigkeit von der Wahl der Parameter,
 verlustfrei oder verlustbehaftet sein.
@@ -84,7 +100,7 @@ Gliederung der Quellenkodierung:
 			- Schnelle Fouriertransformation (FFT)
 			- Diskrete Cosinustransformation
 
-### Kanal Kodierung
+## Kanal Kodierung
 Mit der verlustbehafteten Kanal Kodierung können Kompressionsraten von über 10 erzielt werden.
 Dazu werden Einzelne Teile der Daten weggelasen,
 deren physiologische Wirkung als Teil des Datenstromes nicht von Bedeutung sind.
@@ -98,7 +114,7 @@ Gliederung der Kanalkodierung
 		+ Subsampling
 		+ Subband Kodierung
 
-### Hybride Kodierung
+## Hybride Kodierung
 Die Kombination mehrer der vorher vorgestellten Verfahren.
 Dies sind in der Kombination häufig verlustbehaftet.
 Bekannte Verfahren sind JPEG und MPEG.
