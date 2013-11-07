@@ -93,6 +93,11 @@ Das Verfahren stellt die Präfixfreitheit der Kodeworte sicher
 und erzeugt sie in einer eindeutigen Weise.
 Zur Kommunikation wird dabei zunächst das Kodebuch übertragen.
 
+### Lempel Ziv Kodierung
+Eine Familie von Kodierungen,
+welche im Gegensatz zu Huffmann ganze Zeichenketten als Kodewörter verwendet.
+Dies erlaubt auch höhere Kompressionsraten als bei der Huffmann Kodierung.
+
 
 ## Qullen Kodierung
 Verfahren der Quellen Kodierung können,
