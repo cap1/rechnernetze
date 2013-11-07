@@ -93,11 +93,12 @@ Das Verfahren stellt die Präfixfreitheit der Kodeworte sicher
 und erzeugt sie in einer eindeutigen Weise.
 Zur Kommunikation wird dabei zunächst das Kodebuch übertragen.
 
-### Lempel Ziv Kodierung
+### Lempel-Ziv Kodierung
 Eine Familie von Kodierungen,
 welche im Gegensatz zu Huffmann ganze Zeichenketten als Kodewörter verwendet.
 Dies erlaubt auch höhere Kompressionsraten als bei der Huffmann Kodierung.
-
+Es verwendet jedoch Präfixe von Kodeworten,
+so dass ein Kodewort zugleich auch der Anfang eines anderen Kodewortes sein kann.
 
 ## Qullen Kodierung
 Verfahren der Quellen Kodierung können,
@@ -121,6 +122,15 @@ Gliederung der Quellenkodierung:
 			- Diskrete Fouriertransfromation
 			- Schnelle Fouriertransformation (FFT)
 			- Diskrete Cosinustransformation
+
+#### Prädikative Kodierung {-}
+Das jeweils nächste Zeichen im Datenstrom wird vorhergesagt von einem
+Prädikator der bei Empfänger und Sender identisch ist.
+Nun werden nurnoch Abweichungen übetragen,
+was in der Regel weniger Zeichen benötigt als der Datenstrom selbst.
+Die Kompressionsraten ist letztlich abhängig,
+davon wie leicht sich die Daten vorhersagen lassen
+und wie exakt der Prädikator ist.
 
 ## Kanal Kodierung
 Mit der verlustbehafteten Kanal Kodierung können Kompressionsraten von über 10 erzielt werden.
