@@ -157,3 +157,42 @@ Verfahren der Hybriden Kodierung
 		+ JPEG
 		+ MPEG1, 2, 4, 7
 		+ H.261, ...
+
+# JPEG
+<!--- Vorlesung vom 07.11.13 --->
+Hybrides Kodierungsverfahren für Farbphotos welches schon 1993 standardiesiert,
+von einer Untergruppe der ISO.
+Nutz den kontinuierlichen Farbverlauf von "normalen" Bildern,
+ohne binäre Übergängen zwischen Pixeln.
+Weniger geeignet für Bilder mit hohen Kontrasten
+oder hohem Detailreichtum.
+Eine Verlustfreie Kompression ist bis 3:1 möglich,
+darüberhinaus ist verlustbehaftet Kompression bis ca 40:1.
+In der Regel wird jedoch verlustbehaftet komprimiert.
+Bei der hybriden Kompression kommen diverse Algortihmen zu einsatz,
+wie die Discrete Cosinustransformation und die Huffmann kodierung,
+sowie diverse andere Verfahren.
+
+Das Kompressionsschema ist unabhängig von:
+ * Bildauflösung
+ * Bildseitenverhältnis
+ * Pixelgröße
+ * Farbrepresentation
+ * Bildkomplexität und statistische Eigenschaften des Bildes
+
+## Farbmodell
+Auch Farbraumdarstellung.
+Feine Fabrverläufe werden vom Auge kaum wargenommen.
+Hell Dunkel Unterschiede können jedoch besser erkannt werden.
+Koppelung von Farbe und Helligkeit bei RGB.
+Daher wird die Luminanz, das Helligkeitssignal, verwendet.
+Die Signale werden Abgekürzt mit: Y....
+
+## x:y:z Notation für Fabsubsampling
+Farben von benachbarten Pixeln werden gemittelt.
+...
+Transluzenz(!)
+
+## Dateineinheiten
+
+## Minimal Coded Units
