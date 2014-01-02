@@ -159,7 +159,7 @@ Verfahren der Hybriden Kodierung
 		+ H.261, ...
 
 # JPEG
-<!--- Vorlesung vom 07.11.13 --->
+<!--- Vorlesung vom 07.11.13 -->
 Hybrides Kodierungsverfahren für Farbphotos welches schon 1993 standardiesiert,
 von einer Untergruppe der ISO.
 Nutz den kontinuierlichen Farbverlauf von "normalen" Bildern,
@@ -186,10 +186,21 @@ Feine Fabrverläufe werden vom Auge kaum wargenommen.
 Hell Dunkel Unterschiede können jedoch besser erkannt werden.
 Koppelung von Farbe und Helligkeit bei RGB.
 Daher wird die Luminanz, das Helligkeitssignal, verwendet.
-Die Signale werden Abgekürzt mit: Y....
+Die Signale werden Abgekürzt mit: Y, Cb und Cr.
+Das erste Signal Y steht für die Luminanz oder auch Chrominanz des Signales,
+was die Heeligkeit eines Bildpunktes codiert.
+Cb und Cr (auch u,v) definieren eindeutig eine Farbe in einem 2D-Farbraum.
+
+Dieses System hat verschieden Bezeichungen,
+funktioniert aber scheinbar ähnlich.
+Mögliche Bezeichungen sind:
+	* YUV
+	* Y Cb Cr
 
 ## x:y:z Notation für Fabsubsampling
-Farben von benachbarten Pixeln werden gemittelt.
+Die Farben von benachbarten Pixeln werden gemittelt.
+
+
 ...
 Transluzenz(!)
 
