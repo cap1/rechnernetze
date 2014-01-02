@@ -190,6 +190,7 @@ Die Signale werden Abgekürzt mit: Y, Cb und Cr.
 Das erste Signal Y steht für die Luminanz oder auch Chrominanz des Signales,
 was die Heeligkeit eines Bildpunktes codiert.
 Cb und Cr (auch u,v) definieren eindeutig eine Farbe in einem 2D-Farbraum.
+Ohne die Farbinformationen ergibt sich aus dem Y-Signal ein Schwarz-Weiss Bild.
 
 Dieses System hat verschieden Bezeichungen,
 funktioniert aber scheinbar ähnlich.
@@ -199,7 +200,22 @@ Mögliche Bezeichungen sind:
 
 ## x:y:z Notation für Fabsubsampling
 Die Farben von benachbarten Pixeln werden gemittelt.
+In dieser Notation wird angegeben,
+wie das Subsampling zwischen den Pixeln angewendet wird.
+Die erste Zahl steth für die Anzahl der gemittelten Pixel im Y.
+Die zweite Zahl bezeichnet die Anzahl der Pixel über die in Cb und Cr gemittelt wird.
+Die letze Zahl bezeichnet die Richtung der Mittelung über die Pixel (?).
 
+Typische Muster sind 4:2:2, wo pro 4 Pixel im Y-Signal 2 Pixel es bei Cb und CR gemittelt Pixel gibt. Wobei die Mitteliung in x-Richtung horizontal über jeweils zwei Nachbarpixel erfolgt.
+Bei 4:1:1 werden pro 4-Pixel im Y-Signal gibt es ein gemitteles Pixel bei Cb und Cr. Hier wird auch in x-Richtung horizontal über je 4 Nachbarpixel gemittelt.
+
+Die Bestandteile Helligkeit (Y), Farbe Cb und Farbe Cr werden als JPEG-Komponenten bezeichnet und als solche abgespeichert.
+Dabei ist jede Komponente als 2-dimensionales Array implementiert,
+welche die Bildinformationen enthält und diese anteilig zum Gesamtbild beisteuert.
+Die Arrays werden getrennt abgelegt und komprimiert,
+was die Rechenzeit niedrig hält ( O(n log n)).
+In JEPG-Bilder sind bis zu 255 solcher Felder bzw. Komponenten möglich.
+Angeblich lässt sich damit dann auch Transluzenz implementiern (auch wenn das ausser dem Prof noch keiner gesehen hat).
 
 ...
 Transluzenz(!)
