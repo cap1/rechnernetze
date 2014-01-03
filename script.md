@@ -202,7 +202,7 @@ Mögliche Bezeichungen sind:
 Die Farben von benachbarten Pixeln werden gemittelt.
 In dieser Notation wird angegeben,
 wie das Subsampling zwischen den Pixeln angewendet wird.
-Die erste Zahl steth für die Anzahl der gemittelten Pixel im Y.
+Die erste Zahl steht für die Anzahl der gemittelten Pixel im Y.
 Die zweite Zahl bezeichnet die Anzahl der Pixel über die in Cb und Cr gemittelt wird.
 Die letze Zahl bezeichnet die Richtung der Mittelung über die Pixel (?).
 
@@ -215,10 +215,14 @@ welche die Bildinformationen enthält und diese anteilig zum Gesamtbild beisteue
 Die Arrays werden getrennt abgelegt und komprimiert,
 was die Rechenzeit niedrig hält ( O(n log n)).
 In JEPG-Bilder sind bis zu 255 solcher Felder bzw. Komponenten möglich.
-Angeblich lässt sich damit dann auch Transluzenz implementiern (auch wenn das ausser dem Prof noch keiner gesehen hat).
+Angeblich lässt sich damit dann auch Transluzenz implementieren (auch wenn das ausser dem Prof noch keiner gesehen hat).
 
-...
-Transluzenz(!)
+### JPEG Farb Subsampling
+Beim Farb-Subsampling haben die Chrominanz einen geringe Auflösung als die Luminanzkomponente.
+Dabei ist für den Komrepssionsfaktor wichtig wie die Auflösungen im Verhältnis zueinander stehen.
+Dabei steht die Zahl Hi für das Verhältnis der Auflösung der Komponente i in der Horizontalen Richtung zur Vertikalen Richtung Vi.
+
+Somit gehört beim Farbsubsampling jedes Element einer Chrominanzkomponente zu mehreren Elementen der Luminanzkomponente, es wird als der selbe Farbwert für mehrere benachbarte Pixel verwendet.
 
 ## Dateineinheiten
 
