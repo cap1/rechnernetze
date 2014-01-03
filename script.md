@@ -225,5 +225,14 @@ Dabei steht die Zahl Hi für das Verhältnis der Auflösung der Komponente i in 
 Somit gehört beim Farbsubsampling jedes Element einer Chrominanzkomponente zu mehreren Elementen der Luminanzkomponente, es wird als der selbe Farbwert für mehrere benachbarte Pixel verwendet.
 
 ## Dateineinheiten
+Kompressionsalgorithmen können bei JPEG auf 2 Datetypen angewendet werden:
+ * Einzelne Komponentenelemente
+ * einen Block von Komponetenelementen
+In den JPEG-Algorithmen wird deshalb allgemein von Dateneinheiten gesprochen (Data Units).
+
+Dabei werden die einzelnen Komponentenelemente nur mit verlustfreier Kompression verarbeitet, einer prädiktiven Vorhersage.
+Zur verlustbehafeten Kompression wird in der Regel Farb-Subsampling verwendet und Blöcke der Größe 8x8 mit einer Diskreten Cosinus Transformation verarbeitet.
+
+Die Verarbeitung erfolgt jedoch immer getrennt für jede Komponente.
 
 ## Minimal Coded Units
