@@ -236,3 +236,20 @@ Zur verlustbehafeten Kompression wird in der Regel Farb-Subsampling verwendet un
 Die Verarbeitung erfolgt jedoch immer getrennt für jede Komponente.
 
 ## Minimal Coded Units
+MCUs sind die Elemente aller Komponenten die logisch zusammengehören,
+aber aus Gründen der Effizienz getrennt komprimiert und verarbeitet werden.
+Die sind Beispielsweise die Farbkomponenten und Helligkeitskomponenten eines Pixels.
+
+Werden einzenele Komponenten als Datenelemente und Farb-Subsampling verwedent, besteht eine MCU aus der Menge der zusammengehörigen Elemente aller Komponenten.
+
+	*4*2 Bild mit 4:2:2 Farbsubsampling*
+	Die Helligkeitskompenente ist ein 4+2 Feld mit den Elementen Y1 bis Y4 in der Ersten und Y5-Y8 ind der Zweiten Reihe.
+	Die Farbkomponenten Cb is t ein 2x2 Feld mit den Elemente Cb1 und Cb2 in der Ersten Zeile und Cb3 und Cb4 in der 2. Zeile (analog mit Cr).
+	Somit ergebn sich 4 MCUs:
+		1. MCU1={Y1, Y2, Cb1, Cr1}
+		2. MCU1={Y3, Y4, Cb2, Cr2}
+		3. MCU1={Y5, Y6, Cb3, Cr3}
+		4. MCU1={Y7, Y8, Cb4, Cr4}
+
+Werden jedoch Blöcke von Komponenten als Datenelemente und Farbsubsampling verwendet, enhält eine MCU die Farb- und Helligkeitssignale eines Blocks von Pixeln.
+
