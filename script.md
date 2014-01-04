@@ -253,3 +253,16 @@ Werden einzenele Komponenten als Datenelemente und Farb-Subsampling verwedent, b
 
 Werden jedoch Blöcke von Komponenten als Datenelemente und Farbsubsampling verwendet, enhält eine MCU die Farb- und Helligkeitssignale eines Blocks von Pixeln.
 
+## Kompression mit diskreter Cosinustransformation
+Das Auge ist nicht in der Lage geringe Farbunterschiede wahr zu nehmen.
+Geringe Unterschiede in der Helligkeit werden besser erkannt.
+Wenn nun Chrominanzsignal fouriertransfomiert werden,
+haben die Fourierkoeffizienten eine unterschiedliche Wichtigkeit,
+da Chrominanzkoeffizieten mit hoher Frequenz feine Farbverläuf repreäsentieren 
+können sie mit reduizerter Genauigket abgespeichert oder sogar verworfen werden.
+
+In der Regel ändern sich Photos relativ wenig von Pixel zu Pixel.
+Wird das Luminanzsignal fouriertransformiert haben die Koeffizienten meist nur geringe Amplituden, auf Grund der geringen Menge an Änderungen.
+Somit können auch Luminanz-Koeffizienten mit hoher Frequenz in einer reduzierten Genauigkeit abgespeichert oder verworfen werden.
+
+Die DCT trägt wesentlich zur Datenkompression bei und ist somit ein wichtiger Teil des JPEG Verfahrens.
