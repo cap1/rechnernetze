@@ -266,3 +266,9 @@ Wird das Luminanzsignal fouriertransformiert haben die Koeffizienten meist nur g
 Somit können auch Luminanz-Koeffizienten mit hoher Frequenz in einer reduzierten Genauigkeit abgespeichert oder verworfen werden.
 
 Die DCT trägt wesentlich zur Datenkompression bei und ist somit ein wichtiger Teil des JPEG Verfahrens.
+
+## Verlustfreie Kompression in JPEG
+Ermöglicht Kompressionsraten bis 3:1.
+Dabei kommt prädikative Kodierung zum Einsatz, wobei die Daten anschließend mit per Huffman- oder arithmetischer-Kodierung weiter verdichtet werden.
+Insgesamt gibt es 8 verschiedene Prädikatormodi.
+<!--TODO Bild für Prädikatoren-->
