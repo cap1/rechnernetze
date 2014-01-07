@@ -296,3 +296,28 @@ In diesem Modus werden kontinuierlich Bilder mit höherer Auflösung übertragen
 Somit gewinnt das Bild an schärfe durch die Erhöhung der Anzahl an Pixeln,
 durch Optimierung reicht es auch die Differenz zur gröberen Auflösung.
 Somit werden keine Daten doppelt Übertragen wenn sich keine Daten ändern.
+
+<!--TODO:Erweiterte Beschreibung des sequentiellen Modus -->
+
+# MPEG
+Beschreibt diverse Standards zur Kompression von Audio und Video Datein.
+Diese basieren auf der JPEG-Kompression und erlauben eine verlustbehaftete Kompresion von 75:1 für Video und 10:1 bei Audio.
+Die Qualität kann durch die Kompressionsrate beliebig gewählte werden.
+
+ * MPEG-1 -- Videos in mittlere Qualität für Konsumelektronik
+ * MPEG-2 -- Studio-Qualität für HD-TV
+ * MPEG-4 -- niedirge Qualität bei extrem niedriger Bitrate
+
+MPEG-1 und -2 erlauben den wahlfreien Zugriff auf jedes einzelne Bild innerhalb eines Videofilms und erlauben somit schnelles Vor- und Rückspulen.
+Das Verfahren hat eine hohe Fehlertoleranz gegenüber Übertragungsfehlern.
+Es erlaub eine Vielfalt hinsichtlich Bildgröße und Bildwiederholrate.
+Beide Verfahren basieren auf ähnlichen Algorithmen,
+haben jedoch einige spezifische Details.
+
+## MPEG-1
+Umfasst die drei Teile Audio, Video und System.
+Die Zeitbasis arbeitet mit 90kHz und verteilt 33 Bit große Zeitstempel an Datenpakete.
+Der Systemteil integriert die komprimierten Datenströme von Audio- und Video zu einem ununterbrochenen Paketstrom.
+Der Systemmultiplexer besteth aus 2 Schichten.
+Die Packetschicht gliedert die Bitströme aus Audio und Video-Teil in Pakete und versieht jedes Paket mit einem Header.
+Die Packschicht fasst mehere Pakte der Paketschicht zu einem übergeordneten Paket zusammen das ebenfalls einen Header enthält.
