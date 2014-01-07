@@ -272,3 +272,27 @@ Ermöglicht Kompressionsraten bis 3:1.
 Dabei kommt prädikative Kodierung zum Einsatz, wobei die Daten anschließend mit per Huffman- oder arithmetischer-Kodierung weiter verdichtet werden.
 Insgesamt gibt es 8 verschiedene Prädikatormodi.
 <!--TODO Bild für Prädikatoren-->
+
+## Verlustbehaftete Kompression in JPEG
+Dient hauptsächlich der Kompression von Photos.
+Die verschiedenen Modi verwenden unter anderem die DCT um das 2-dimensionale Bild in den 2-dimensionalen Spektralraum zu transformieren
+
+### Sequentieller Modus
+Daten werden in Blöcken von Pixeln der Größe 8x8 oder 16x16 verwendet und Farbsubsampling.
+Das Bild wird Block für Block von links oben nach rechts unten zum komprimiert.
+
+Dieser Modus ist am leichtesten zu implementiern und liefert die besten Kompressionsraten
+und ist in den anderen Beiden Modi enthalten.
+
+### Progressiver Modus
+Bild wird mehrmals komprimiert, jedesmal etwas schärfer.
+Übertragen werden dann immer weniger stark komprimierte Bilder.
+Somit baut sich aus einem unscharfen ein scharfes Bild auf,
+je nach Bandbreite und dauer der Übertragung.
+Es werden Bilder immer schärfer durch schrittweise Hinzunahme von Fourierkoeffizienten mit hoher Frequenz oder durch Erhöhung der Genauigkeit der Fourierkoeffizienten.
+
+### Hierarchischer Modus
+In diesem Modus werden kontinuierlich Bilder mit höherer Auflösung übertragen.
+Somit gewinnt das Bild an schärfe durch die Erhöhung der Anzahl an Pixeln,
+durch Optimierung reicht es auch die Differenz zur gröberen Auflösung.
+Somit werden keine Daten doppelt Übertragen wenn sich keine Daten ändern.
