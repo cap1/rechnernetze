@@ -321,3 +321,16 @@ Der Systemteil integriert die komprimierten Datenströme von Audio- und Video zu
 Der Systemmultiplexer besteth aus 2 Schichten.
 Die Packetschicht gliedert die Bitströme aus Audio und Video-Teil in Pakete und versieht jedes Paket mit einem Header.
 Die Packschicht fasst mehere Pakte der Paketschicht zu einem übergeordneten Paket zusammen das ebenfalls einen Header enthält.
+
+### MPEG-1/Video
+Der Videoteil von MPEG-1 macht sich zwei Fakten zu Nutze:
+ * Benachbarte Pixel eines Bildes unterscheiden sich nur wenig voneinander
+ * Aufeinanderfolgende Bilder eiens Videofilms unterscheiden sich auch nur wenig
+ 
+ Die örtliche Redundanz wird druch die Kompression der einzelnen Bildern als JPEG reduziert.
+ Die zeitliche Redundanz wird durch eine Kompensation in den Bewegungen eliminiert.
+ Es werden bei diesem Verfahren nur die Bilddetails erfasst die sich auch ändern.
+ So werden die Bildteile die (nahezu) unverändert bleiben, sich aber in ihrer Position ändern, durch die Angabe der neuen Position chrakterisiert.
+ Es gibt in MPEG-1/Video verschiedene Bildtypen, solche für verschobene Bildteile und "normale" vollständige Bilder.
+ Durch den Vergleich mit den vollständigen Bildern, lassen sich die unvollständigen, verschobenen Bilder aufbauen.
+ Der Vergleich erfolgt mittels einer Bewegungskompensation.
