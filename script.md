@@ -334,3 +334,11 @@ Der Videoteil von MPEG-1 macht sich zwei Fakten zu Nutze:
  Es gibt in MPEG-1/Video verschiedene Bildtypen, solche für verschobene Bildteile und "normale" vollständige Bilder.
  Durch den Vergleich mit den vollständigen Bildern, lassen sich die unvollständigen, verschobenen Bilder aufbauen.
  Der Vergleich erfolgt mittels einer Bewegungskompensation.
+
+ #### Bewegungskompensation
+ Die Bewegungskompensation ist besonders effektiv wenn sich nur eine Objekte im Vordergrund bewegen der die Kamera über eine Szenerie mit festem Bildhinter- und -vordergrund fährt.
+
+ Das Bild wird dazu in macroblöcke zerlegt, ähnlich wie bei JPEG.
+ Nun wird versucht dieser Macroblock in Bild n+1 wiederzufinden.
+ Um Rechenzeit zu sparen wird dabei nur die Umgebung des Macroblockes abgesucht.
+ Wird der Macrblock wiedergefunden wird die Postionsverschiebung mit Hilfe eines Bewegungsvektors dargestellt.
