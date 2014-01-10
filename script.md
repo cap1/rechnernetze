@@ -377,3 +377,8 @@ Dabei werden jedoch andere JPEG-Quantisierungstabellen verwendet,
 welche geringe Differenz zu Null macht.
 Da das Auge diese Unterschiede nur schlecht wahrnehmen kann führt das zu einer weiter verbesserten Kompression.
 
+#### Bidirectional predicted Frames
+B-Frames sind P-Frames sehr ähnlich, sie können sich jedoch sowohl auf das Vorgänger als auch das Nachfolgerbild (oder beide) beziehen.
+B-Frames tragen jedoch nicht zur Fehlerfortpflanzung bei,
+da von ihnen keine weitern Blöcke abgeleitet werden.
+B-Frames werden in der Regel zwischen einem I- oder P-Referenzbild platziert.
