@@ -327,18 +327,45 @@ Der Videoteil von MPEG-1 macht sich zwei Fakten zu Nutze:
  * Benachbarte Pixel eines Bildes unterscheiden sich nur wenig voneinander
  * Aufeinanderfolgende Bilder eiens Videofilms unterscheiden sich auch nur wenig
  
- Die örtliche Redundanz wird druch die Kompression der einzelnen Bildern als JPEG reduziert.
- Die zeitliche Redundanz wird durch eine Kompensation in den Bewegungen eliminiert.
- Es werden bei diesem Verfahren nur die Bilddetails erfasst die sich auch ändern.
- So werden die Bildteile die (nahezu) unverändert bleiben, sich aber in ihrer Position ändern, durch die Angabe der neuen Position chrakterisiert.
- Es gibt in MPEG-1/Video verschiedene Bildtypen, solche für verschobene Bildteile und "normale" vollständige Bilder.
- Durch den Vergleich mit den vollständigen Bildern, lassen sich die unvollständigen, verschobenen Bilder aufbauen.
- Der Vergleich erfolgt mittels einer Bewegungskompensation.
+Die örtliche Redundanz wird druch die Kompression der einzelnen Bildern als JPEG reduziert.
+Die zeitliche Redundanz wird durch eine Kompensation in den Bewegungen eliminiert.
+Es werden bei diesem Verfahren nur die Bilddetails erfasst die sich auch ändern.
+So werden die Bildteile die (nahezu) unverändert bleiben, sich aber in ihrer Position ändern, durch die Angabe der neuen Position chrakterisiert.
+Es gibt in MPEG-1/Video verschiedene Bildtypen, solche für verschobene Bildteile und "normale" vollständige Bilder.
+Durch den Vergleich mit den vollständigen Bildern, lassen sich die unvollständigen, verschobenen Bilder aufbauen.
+Der Vergleich erfolgt mittels einer Bewegungskompensation.
 
- #### Bewegungskompensation
- Die Bewegungskompensation ist besonders effektiv wenn sich nur eine Objekte im Vordergrund bewegen der die Kamera über eine Szenerie mit festem Bildhinter- und -vordergrund fährt.
+#### Bewegungskompensation
+Die Bewegungskompensation ist besonders effektiv wenn sich nur eine Objekte im Vordergrund bewegen der die Kamera über eine Szenerie mit festem Bildhinter- und -vordergrund fährt.
 
- Das Bild wird dazu in macroblöcke zerlegt, ähnlich wie bei JPEG.
- Nun wird versucht dieser Macroblock in Bild n+1 wiederzufinden.
- Um Rechenzeit zu sparen wird dabei nur die Umgebung des Macroblockes abgesucht.
- Wird der Macrblock wiedergefunden wird die Postionsverschiebung mit Hilfe eines Bewegungsvektors dargestellt.
+Das Bild wird dazu in macroblöcke zerlegt, ähnlich wie bei JPEG.
+Nun wird versucht dieser Macroblock in Bild n+1 wiederzufinden.
+Um Rechenzeit zu sparen wird dabei nur die Umgebung des Macroblockes abgesucht.
+Wird der Macroblock wiedergefunden wird die Postionsverschiebung mit Hilfe eines Bewegungsvektors dargestellt. 
+Dieser und die Teile des Bildes die sich garnicht verändern müsssen nur einmal kodoiert und übertragen werden.
+
+Die Entscheidung wann zwei Macroblöcke identische sind wird an Hand eines Entscheidungskriteriums fest gemacht, so gelten zwei Blöcke als identisch wenn ein bestimmter Schwellenwert überschritten ist.
+Dieses Entscheidungskriterium ist bspw. die Zahl gleicher Pixel in einem Macroblock.
+Alternativ kann auch der mittlere quadratische Abstand der Pixelwerte der beiden Macroblöcke herrangezogen werden (euklidische Metrik).
+Hier werden dann die Abstände der Chrominanz und Liuminanz Werte verglichen.
+
+Die Macroblöcke können entweder über eine *Brute-Force Methode* innerhalb eines bestimmten Suchbereiches oder durch eine Methode mit meheren Gittern gefunden werden.
+Dabei benötigt die Brute-Force Methode eine höhere Rechenleistung bzw. mehr Zeit (O(n^3)), wärend die Gittermethode weniger Rechenleistung benötigt aber unter bestimmten umstände Blöcke nicht findet.
+
+Letztlich ist es nötig verschiedene Bildtypen zu unterscheiden,
+da der Video-Kodierer nur einen Bitstrom aus Bewegungsvektoren und JPEG-komprimierten Differenz-Macroblöcken oder nur den Bitstrom für einen Orginalen JPEG-Macroblock liefert.
+Die Wiederverwendung von Blöcken ist aber nicht beliebig of möglich,
+da sich immer kleine Fehler in die Blöcke einschleichen.
+Deshalb liefert der MPEG-Video-Kodiere einen Bitstrom mit unterschiedlich kodierten Bildern, die so genannten MPEG-Frames.
+
+### MPEG-1-Frames
+Die verschiedenden Frames kommen im Wechsel vor nehmmen unterschieldiche Aufgaben war.
+Sie unterscheiden sich in der Menge an Informationen und "Orginalität",
+also der Menge der Bewegungskompensation.
+
+#### Intracoded Frames
+I-Frams enthalten ein Bild komplett ohne Bewegungskompensation als JPEG kodiert.
+Sie dienen als Ausgangspunkt für P- und B-Frames.
+Weiterhin wird mit I-Frames die Synchronisation hergestellt und sie sind der Ausgangspunkt zum Einklinken neuer Teilnehmer in einen Übertragung,
+bzw weiner Resynchronisation nach Übertragungsfehlern.
+Auch eignen sie sich zum Spulen, da sie keinen Bezug auf andere Frames nehmen.
