@@ -364,8 +364,16 @@ Sie unterscheiden sich in der Menge an Informationen und "Orginalität",
 also der Menge der Bewegungskompensation.
 
 #### Intracoded Frames
-I-Frams enthalten ein Bild komplett ohne Bewegungskompensation als JPEG kodiert.
+I-Frames enthalten ein Bild komplett ohne Bewegungskompensation als JPEG kodiert.
 Sie dienen als Ausgangspunkt für P- und B-Frames.
 Weiterhin wird mit I-Frames die Synchronisation hergestellt und sie sind der Ausgangspunkt zum Einklinken neuer Teilnehmer in einen Übertragung,
 bzw weiner Resynchronisation nach Übertragungsfehlern.
 Auch eignen sie sich zum Spulen, da sie keinen Bezug auf andere Frames nehmen.
+
+#### Predicted Frames
+Ein P-Frame besteht aus Orginal-JPEG-Macroblöcken und Differenz-JPEG-Macroblöcken mit Bewegungsvektoren.
+Sie werden durch Bewegungskompensation aus zeitlich zurückliegenden I- oder P-Frames gebildet.
+Dabei werden jedoch andere JPEG-Quantisierungstabellen verwendet,
+welche geringe Differenz zu Null macht.
+Da das Auge diese Unterschiede nur schlecht wahrnehmen kann führt das zu einer weiter verbesserten Kompression.
+
