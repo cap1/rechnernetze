@@ -382,3 +382,9 @@ B-Frames sind P-Frames sehr ähnlich, sie können sich jedoch sowohl auf das Vor
 B-Frames tragen jedoch nicht zur Fehlerfortpflanzung bei,
 da von ihnen keine weitern Blöcke abgeleitet werden.
 B-Frames werden in der Regel zwischen einem I- oder P-Referenzbild platziert.
+
+#### DC-coded Frames
+Jeder Pixel hat in einem DC-kodierten Rahmen den gleichen Wert.
+Dieser ergibt sich aus dem Mittelwert aller Elemente eines Blockes.
+Daduch haben DC-Rahmen eine sehr viel niedrigere Auflösung
+und dienen haupstächlich zum sehr schnellen Spulen durch den Film.
