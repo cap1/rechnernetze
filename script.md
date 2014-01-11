@@ -388,3 +388,28 @@ Jeder Pixel hat in einem DC-kodierten Rahmen den gleichen Wert.
 Dieser ergibt sich aus dem Mittelwert aller Elemente eines Blockes.
 Daduch haben DC-Rahmen eine sehr viel niedrigere Auflösung
 und dienen haupstächlich zum sehr schnellen Spulen durch den Film.
+
+### MPEG-Datenstrom
+Der MPEG-Datenstrom ist hierarchisch in 6 Schichten eingeteilt.
+Jede Schicht aht dabei einen eigenen Header, welcher Verwaltungsinfomationen enthält.
+Die Daten aller Schichten bilden gemeinsam ein MPEG-Video Paket.
+Jedes Video-Paket wird vom MPEG-Systemteil über eine 90kHz-Systemuhr mit einem MPEG-Audio Pakte starr gekoppelt (~synchronisiert).
+Im folgenden sind die die MPEG-Layer beschrieben.
+
+ * Sequence Layer
+	+ Fasst Bildgruppen zu einem Film zusammen
+	+ Header enthält allgemeine Information zum Film (Bildgröße. Bildformat, Wiederholrate, Bit-Rate, nötige Puffergröße)
+ * Group-of-Picture Layer
+	+ enthält mindestens einen I-Frame zur Synchronisation
+	+ Ohne Bezug auf andere Gruppen dekodierbar (paralellisierbar)
+ * Picture Layer
+	+ enthält alle Informationen die benötigt werden um *ein* Bild zu dekodieren
+	+ enthält Postionsinformationen für seine Gruppe
+ * Slice Layer
+	+ Sequenzen von aufeinanderfolgenden Macroblöcken im selben Bild
+	+ Header definiert Beginn und Ende von Slice (paralellisierbar)
+ * Macro Layer
+	+ Beschreibt die Art und Lage von Macroblöcken
+	+ Verschienden Macroblöcke für verschieden Fames
+ * Block Layer
+	+ Enthält die verschiedenen Frames
