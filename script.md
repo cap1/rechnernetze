@@ -413,3 +413,12 @@ Im folgenden sind die die MPEG-Layer beschrieben.
 	+ Verschienden Macroblöcke für verschieden Fames
  * Block Layer
 	+ Enthält die verschiedenen Frames
+
+## MPEG-1/Audio
+Standardformat zum Ablegen von Audio Daten,
+insbesondere MPEG-1/Audio Level III (Layer III) auch bekannt als MP3.
+
+Bei MPEG-1/Audio werden Abtastraten von 48kHz, 44.1kHz und 32kHz unterstütz.
+Das Format is bitorientiert und die Audiodaten werden hintereinander in Frames übertragen,
+welche abhängig vom Level eine feste Anzahl an Abtastpunkten haben.
+Zusätzlich werden noch Metainformationen übertragen.
