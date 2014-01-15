@@ -422,3 +422,19 @@ Bei MPEG-1/Audio werden Abtastraten von 48kHz, 44.1kHz und 32kHz unterstütz.
 Das Format is bitorientiert und die Audiodaten werden hintereinander in Frames übertragen,
 welche abhängig vom Level eine feste Anzahl an Abtastpunkten haben.
 Zusätzlich werden noch Metainformationen übertragen.
+
+### Funktionsweise
+MP3 macht sich dabei Eigenarten des Ohres zu nutze,
+änlich wie MPEG bei den Augen.
+So kann das menschliche Gehör kleine Lautstärkesprünge nach einem
+großen Lautstärkesprung nicht wahrnehmen.
+Weiterhin können leise Töne in einer ähnlichen Frequnzen von lauten Tönen nicht wahrnehmen.
+Auch Rauschen wird bei lauten Tönen weniger als störend Wahrgenommen.
+
+So ergibt siche in *psycho akustisches Modell* welches zur Komrepssion der Daten beiträgt.
+Dies wird implementiert durch getrennte Kodierung von Subbändern.
+Dabei werden die Frequenzen zwischen 20Hz und 20kHz in je 32 Unterbänder zu je 625Hz aufgeteilt und getrennt kodiert.
+An dieser Stelle erfolgt auch das Weglassen leiser Töne neben lauten Tönen.
+
+Die Abtastwerde werden dann je nach Subband quantisiert und mit DCT die Fourierkoeffizienten errechnet.
+Anschließend erfolgt die Entropie-Kodierung der Fourierkoeffizienten mittel Huffman-Kode.
