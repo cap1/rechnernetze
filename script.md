@@ -487,3 +487,16 @@ Zusätzlich werden folgende Techniken eingesetzt:
 	+ MPEG-4 Syntactic Description Language
 	+ MSDL erlaub beschreibung von Objekten und Operationen auf ihnen
 	+ Diese Objekte werden kodiert und manipuliert wie Pixel in MPEG-1
+
+# ISO Layer 7 - Die Anwendungsschicht
+Im Gegensatz zum Internet ist der Layer 7 im Internet sehr stark ausgeprägt,
+da die Layer 5 und 6 dort nicht implementiert sind.
+
+## Klassifikation nach Diensten und Anwendungen
+Dienst
+
+:	Programme und Protokolle, die allgemein im Internet verfügbar sind und der Datenaustauschformat in einer Norm oder einem sog. RFC festgelegt ist
+
+Anwendung
+
+:	Individuelle Programme von Firmern, Institutionen oder Einzelpersonen, die auf Grund ihrer Client/Server-Struktur ein Rechnernetz brauch und die netweder propriertär oder für einen begrenzt öffentlichen Benutzerkreis bestmmt sind.
