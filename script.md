@@ -466,3 +466,24 @@ Weiterhin sind 7 mehrsprachige Tonkanäle möglich
 und die Tonqualität ist besser bei niedrigen Datenrante (weniger als 64 kBit/s).
 Dabei bleibt MPEG-2 aufwärtskompatibel zu MPEG-1
 und alle MPEG-1 Audioformate könne auch von MPEG-2 verarbeitet werden.
+
+## MPEG-4
+MPEG-4 (ISO 14496) war ursprünglich für Systeme mit wenigen Ressourcen gedacht
+und sollte in der Mobilkommunikaion und Videotelefonie eingesetzt werden.
+Die ursprüngliche Datenraten lagen zwischen 4800 und 64000 bit/s.
+Mittlerweile sind etwa 25 Unterstandards zu MPEG-4 vorhanden.
+Darin ist auch der H.264 Standard (AVC) für HDTV und bluray enthalten,
+sowie Spezifikationen für 3D-Videos.
+AVC und der Audioteil AAC erlauben höhere Kompressionsraten bei bessere Qualität,
+benötigen jedoch auch einen höheren Rechenaufwand im Vergleich zu MPEG-1/2.
+
+### Kompression in MEPG-4
+In MPEG-4 werden die Algorithemen aus mehreren Standards gleichzeitg verwendet
+um besoders hohe Komrepssionsraten zu erzielen (MPEG-1/2, H261, H263, H264).
+Zusätzlich werden folgende Techniken eingesetzt:
+
+ * Analyse der Semantik der Bildinhalte
+ * Formale Sprache zur Beschreibung der Szenen (MSDL)
+	+ MPEG-4 Syntactic Description Language
+	+ MSDL erlaub beschreibung von Objekten und Operationen auf ihnen
+	+ Diese Objekte werden kodiert und manipuliert wie Pixel in MPEG-1
