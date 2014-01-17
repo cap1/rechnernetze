@@ -500,3 +500,25 @@ Dienst
 Anwendung
 
 :	Individuelle Programme von Firmern, Institutionen oder Einzelpersonen, die auf Grund ihrer Client/Server-Struktur ein Rechnernetz brauch und die netweder propriertär oder für einen begrenzt öffentlichen Benutzerkreis bestmmt sind.
+
+---------------------- -------------------------------
+Dienste					  Anwendungen
+---------------------- -------------------------------
+DNS						  VOD
+
+www						  web-TV
+
+news						  Systeme zur Flugbuchung
+
+ftp						  Video-Konferenzsysteme
+
+E-Mail					  Verteilte Dokumentenbearbeitung
+
+Zeitverteilung (ntp)			
+
+telnet
+---------------------- -------------------------------
+
+Table: Anwendungen und Diensten auf Layer 7
+
+Im weiteren werden noch einige der Dienste und Anwenungen näher beschrieben.
