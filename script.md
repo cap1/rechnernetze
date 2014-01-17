@@ -438,3 +438,31 @@ An dieser Stelle erfolgt auch das Weglassen leiser Töne neben lauten Tönen.
 
 Die Abtastwerde werden dann je nach Subband quantisiert und mit DCT die Fourierkoeffizienten errechnet.
 Anschließend erfolgt die Entropie-Kodierung der Fourierkoeffizienten mittel Huffman-Kode.
+
+## MPEG-2
+Bei MPEG-2 handelt es sich um eine Variante von MPEG-1 mit zusätzlichen leistungsmerkmalen.
+Dazu gibt es neben dem Programmstrom,
+welcher einem MPEG-1-Systemstron entspricht einen zweiten Transportstrom.
+Dieser enthält Pakete fester länge, koppelt Audio und Video jedoch nur asynchron.
+Das ist wiederum gut für die Übertragung im Netz,
+aber schlecht für eine Lippensynchrone übertregung von Inhalten.
+Der Programmstron kann hingegen Audio und Video über einen Systemtak synchron halten,
+was die Lippensynchronizität erhöht aber schlechter für die Üertragung im Netz ist.
+Unter Verlust der Synchronizität ist ein wechsel zwischen den Strömen möglich.
+
+#### MPEG-1 vs MPEG-2 {-}
+ * MPEG-2 unterstütz verschiedene Anwendungsgebiete
+	+ 5 verschiedene Profile
+ * 4 verschiedene Auflösungsstufen
+ 	+ niedrig, mittel, hoch, sehr hoch
+	+ Datenraten höher als bei MPEG-1
+ * D-Rahmen entfallen
+ * Interlacing möglich (Halbbilder)
+
+### MPEG-2/Audio
+Es sind bis zu 5 Audiokanäle mit voller Bandbreite möglich,
+was Surroundsound erlaubt.
+Weiterhin sind 7 mehrsprachige Tonkanäle möglich
+und die Tonqualität ist besser bei niedrigen Datenrante (weniger als 64 kBit/s).
+Dabei bleibt MPEG-2 aufwärtskompatibel zu MPEG-1
+und alle MPEG-1 Audioformate könne auch von MPEG-2 verarbeitet werden.
