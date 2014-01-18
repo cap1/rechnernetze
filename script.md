@@ -544,3 +544,13 @@ Insgesamt gibt es mehr als 200 TLDs welche alle den Root-Servern bekannt sind.
 
 Der Name resultiert aus einer Verkettung der durchlaufenen Knotennamen,
 welche jeweils durch einen Punkt getrennt sind.
+
+Domain Namen können bei einem Network Information Center (NIC) registriert werden.
+Dafür ist die Zustimmung des Vaterknotens im Namensbaum nötig.
+
+Dabei ist jeder Knoten im Namesbaum der nicht Blatt ist,
+auch ein sog. Name Server und sorgt für die Vermittlung zu seinen Sohnknoten.
+Diese können wiederum auch Name-Server oder Blätter sein.
+
+Durch Ressource Records wird das das System Unterstütz.
+Sie enthalten bereits bekannte Zuordnungen von Rechnernamen zu IP-Adressen.
