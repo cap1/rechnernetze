@@ -522,3 +522,25 @@ telnet
 Table: Anwendungen und Diensten auf Layer 7
 
 Im weiteren werden noch einige der Dienste und Anwenungen näher beschrieben.
+
+## Domain Name System
+Jeder Rechner des Internet wird mit einer eindeutigen IPv4 oder IPv6 angesprochen.
+Das Domain Name System übersetzt diese Art von nummerischen Adressen in literale,
+also eine Zurodnung von foobar.de zu einer IP-Adresse.
+
+Die Vergabe und Zurdnung erfolgt modular und hierarchisch in einer Baumstruktur.
+Dabei enstsprechen die Blätter den IP-Adressen
+und alle Knoten stehen für eine ganzen Bereich von Namen.
+Dabei ist die Baumtiefe unbeschränkt,
+genauso wie die Anzahl der Söhne pro Knoten.
+
+Die zweitoberste Baumebene wird als Top-Level Domain bezeichnet (TLD)
+und hat einen festgelegten Aufbau.
+Die oberste Baumebene besteht aus 13 festgelegten Root-Servern,
+welche Anfragen an alle darunterliegenden weiterleitet.
+Der Baumdurchlauf geht maximal bis Top-Level Domain,
+nicht bis zum Root-Server.
+Insgesamt gibt es mehr als 200 TLDs welche alle den Root-Servern bekannt sind.
+
+Der Name resultiert aus einer Verkettung der durchlaufenen Knotennamen,
+welche jeweils durch einen Punkt getrennt sind.
