@@ -605,3 +605,30 @@ Telnet wurde aber durch SSH und Remote Desktop abgelöst.
 Telnet ist unverschlüsselt und bietet keine Graphikuntersützung.
 Weiterhin ist es recht ineffizient, da für jedes ASCII Zeichen ein einzelnes TCP/IP-Paket übertragen wird.
 Der Standard TCP port von Telnet ist 23.
+
+## FTP
+Netzwerkprotkoll zur Übertragung von Datein über TCP/IP-Netzwerke.
+Es erlaubt dabei folgenden Funktionen auf entfernten Dateine bzw. Verzeichnissen:
+ * Senden
+ * Empfangen
+ * Löschen
+ * Umbenenen
+ * Erstellen
+ * Wechseln
+
+Dabei ist FTP aber nicht transparent, es lässt sich also nicht in das lokale Dateisystem integrieren.
+Weiterhin ist es nicht möglich Befehle auf den Dateien oder Verzeichnissen auszuführen.
+Die Daten werden nicht verschlüsselt übertreagen und es erfolgt nur eine authenthifizieriung am entfernten Rechner.
+Die Daten werden im binär oder ASCII-Modus übertragen.
+Wobei eine Übertragung durch einen binären Bitstrom erfolgt und die Steuerbefehle mit ASCII Steuersequenzen implementiert sind.
+Das eigentliche Protokoll ist somit für den Menschen lesbar.
+Die Steuerdaten werden über eine getrennte TCP/IP-Verbindung auf Port 21 Übertragen.
+Der binäre Datenstrom läuft über den TCP-Port 20.
+Dadurch lassen sich fehlerhafte Datenübertragungen abbrechen.
+
+Die Datenübertragung mittels FTP ist nicht gesichert.
+Die folgenden Methoden haben sich etabliert um dieses Schwäche zu überkommen:
+ * Secure FTP - FTP-Steuerung mit Hilfe von SSH
+ * FTPS - FTP über SSL, sichert Steuer- und Nutzdaten
+ * SCP - Sicher Seuer und Nutzdaten mit SSH
+ * SFTP - Zusätzliche Dateioperationen für SCP
