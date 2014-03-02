@@ -587,9 +587,21 @@ Diese hat fünf Elementen:
 ### Aufbau der Ressource Records
 Ressouce Records bestehen aus dem folgenden Fünftupel:
  * Owner
- * Type
- * Class
- * TTL
- * RDATA
+ * Type - 16Bit für den Adresstyp
+ * Class - 16Bit für Protkollfamilien, (IN=IP)
+ * TTL - 32Bit Lebensdauer des RR in Sekunden
+ * RDATA  - eigentliche Information, abhängig vo Type/Class
 
+## Telnet
+Mit dem Telnet-Dienst kann ein Anwender, mit entsprechender Berechtigung,
+von seinem Rechern asu über das Netz die Leistungen eines anderen Computers nutzen.
+Es verwendet dabei die folgenden drei Konzepte die bei Rechnernetzen immer wieder auftauchen:
+ * Virtualisierung der Kommunikation, wie Wbebrowser und HTML
+ * Verhandelbare Optionene, wie PPP bei DSL
+ * Symmetrische Verbindungden, wie bei peer-to-peer
 
+Telnet wurde hauptsächlich zum Remote Login, dem Verbinden von Terminals und dem Distributed Computing eingesetzt.
+Telnet wurde aber durch SSH und Remote Desktop abgelöst.
+Telnet ist unverschlüsselt und bietet keine Graphikuntersützung.
+Weiterhin ist es recht ineffizient, da für jedes ASCII Zeichen ein einzelnes TCP/IP-Paket übertragen wird.
+Der Standard TCP port von Telnet ist 23.
