@@ -554,3 +554,42 @@ Diese können wiederum auch Name-Server oder Blätter sein.
 
 Durch Ressource Records wird das das System Unterstütz.
 Sie enthalten bereits bekannte Zuordnungen von Rechnernamen zu IP-Adressen.
+
+Mit Zonen lässt sich definieren welche Teile eines Unterbaumes ein DNS-Server auflöst.
+So gibt es verschiedenen Name-Server für xxx.yale.edu und yyy.eng.yale.edu sowie zzz.cs.yale.edu.
+
+### Ablauf der Namesauflösung
+Die Auflösung von Adressen kann rekursiv oder iterativ erfolgen.
+
+Bei der rekursiven Namensauflösung befragt der niedere Knoten den nächst Höheren.
+Kann dieser den Namen ebenfalls nicht auflösen, übergibt fragt er selbts wiederrum den nächsthöheren.
+Kann der Namen aufgelöst werden, wird die Information an den Anfragenden weitegleitet.
+
+Wird iterativ aufgelöst, stellt der Anfragende seine Anfragen an die jeweils nächst Höheren Knoten bis er eine Antwort erhält.
+Er erhält jeweils die Information zum nächt höheren Knoten oder die Information das die Anfrage nicht aufgelöst werden konnte.
+
+Somit ist die iterative Namesauflösung weniger aufwendig für die Server.
+Bei der Rekursiven verhält es sich genau umgekehrt.
+
+Zusätzlich gibt es Caches um die Namesauflösung zu beschleunigen.
+Durch sekundäre Namesserver erhöht sich die Zuverlässigkeit,
+autorative Nameserver lösen Konsistenzprobleme auf.
+
+### DNS-Query
+Das Query-Protokoll ist eine Datenstrucktur die zwischen Client und Server übertragen wird.
+Diese hat fünf Elementen:
+ * Query Header - Steuerinformation zum Query
+ * Question - eigentliche Anfrage:= Rechnername des Adresse gesucht wird
+ * Answer - Resource Record der die Antwort auf die Frage darstellt
+ * Authority (=Name Server) - Resource Record die den Weg zu einem autoritativen Nameserver anzeigen
+ * Additional - zusätzliche RR, bspw IP des Mailservers der Zone
+
+### Aufbau der Ressource Records
+Ressouce Records bestehen aus dem folgenden Fünftupel:
+ * Owner
+ * Type
+ * Class
+ * TTL
+ * RDATA
+
+
