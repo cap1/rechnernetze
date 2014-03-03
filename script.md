@@ -631,4 +631,28 @@ Die folgenden Methoden haben sich etabliert um dieses Schwäche zu überkommen:
  * Secure FTP - FTP-Steuerung mit Hilfe von SSH
  * FTPS - FTP über SSL, sichert Steuer- und Nutzdaten
  * SCP - Sicher Seuer und Nutzdaten mit SSH
- * SFTP - Zusätzliche Dateioperationen für SCP
+ * SFTP - Zusätzliche Dateioperationen für SCPa
+
+## E-Mail
+Mit E-Mail lassen sich Nachrichten und Daten zwischen E-Mailadressen im DNS-Format.
+Zwei Mailformate sind im Internet verbreitet:
+ * RFC 822
+ * MIME
+
+sie werden im Folgenden beschrieben.
+
+### RFC 822
+Die Email besteht aus einem Umschlag (envelope),
+einem Kopfteil (header) und
+der Nachricht (body).
+
+Der _Kopfteil_ enthäkt die Adressen der Empfänger (To:).
+sowie die Empfänger der von Kopien (CC:) und Blindkopien (BCC:).
+Auch enthalten sin der Absendern (From:) und des Absenders (Sender:) der die E-Mail tatsächlich verschickt hat.
+Weiterhin enthalten sind die Daten wann die E-Mail and welchem Mail-Transfer-Server entlang der Route verschickt wurde (Received:), sowie Datum und Zeit des Absendendens.
+Ebenfalls enthält der header den Betreff (Subject:) der E-Mail und die designierte Anwort-Adresse (Replay-To:).
+
+E-Mail basiert auf der Kommunikation zwischen Mail-Agents.
+Dabei handelt es sich entweder um Benutzeragenten (User-Agents) 
+oder Nachrichtentransferagenten (Mail Transfer Agents),
+bei letzeren handelt es sich um Mailserver.
