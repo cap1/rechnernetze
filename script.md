@@ -666,3 +666,10 @@ Ein Mailserver besteht aus drei Teilen:
  * Protkoll zur Kommuniakation mit Benutzern (Useragents)
  * Protokoll zur Kommunikation mit anderen Nachrichtentransferagenten (Mailservern)
 
+#### Simple Mail Transfer Protocol
+Die Mailserver sprechen untereinander das Simple Mail Transfer Protocol (SMTP).
+Es wird auch von Useragents verwendet um Mails an Mailserver zu übergeben.
+SMTP verwendet den Port 25, dieser wird aus zum Spamschutz jedoch zumeist nicht verwendet,
+da SMTP selbst keine Authentifizierung oder Verschlüsserlung beinhaltet.
+Das Protokoll besteht aus ASCII sequenzen und kann somit auch mit mit Telnet händisch geschrieben werden.
+Um Binärdateien per Mail verschicken zu können müssen diese entweder in ASCII kodiert werden oder es müssen MIME-Emails versendet werden.
