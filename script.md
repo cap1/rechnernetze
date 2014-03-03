@@ -656,3 +656,13 @@ E-Mail basiert auf der Kommunikation zwischen Mail-Agents.
 Dabei handelt es sich entweder um Benutzeragenten (User-Agents) 
 oder Nachrichtentransferagenten (Mail Transfer Agents),
 bei letzeren handelt es sich um Mailserver.
+
+#### Mailserver
+Bei den Nachrichtentransferagenten handelt es sich um Serverprogramme.
+Sie sorgen für versand und Empfang von Nachrichten.
+Ist in den Ressource Records einer Zone das MX-Feld gesetzt, bezeichnet es den zuständigen Mailserver der Zone.
+Ein Mailserver besteht aus drei Teilen:
+ * Mailboxen - für jede E-Mail Adresse der Domäne
+ * Protkoll zur Kommuniakation mit Benutzern (Useragents)
+ * Protokoll zur Kommunikation mit anderen Nachrichtentransferagenten (Mailservern)
+
