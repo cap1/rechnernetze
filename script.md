@@ -673,3 +673,16 @@ SMTP verwendet den Port 25, dieser wird aus zum Spamschutz jedoch zumeist nicht 
 da SMTP selbst keine Authentifizierung oder Verschlüsserlung beinhaltet.
 Das Protokoll besteht aus ASCII sequenzen und kann somit auch mit mit Telnet händisch geschrieben werden.
 Um Binärdateien per Mail verschicken zu können müssen diese entweder in ASCII kodiert werden oder es müssen MIME-Emails versendet werden.
+
+Mit MIME (Multipurpose Internet Mail Extensions) erweitert den RFC 822 für verschiedene Nachrichten.
+Er verwendet spezielle Codierungen für das Übertragen von Nicht-ASCII Nachichten,
+wie das Quoted Printable Encoding oder Base64 Encoding.
+
+##### Quoted Printable Encoding
+erzeugt einen noch menschen lesbaren Code.
+Sonderzeichen die oberhalb von 127 liegen werden eingeleitet durch ein '=' und die darauffolgenden zeichen kodieren das SOnderzeichen.
+
+#### Base64
+erzeigt keinen menschenlesbaren Code,
+da hier dier Datenstrom selbst codiert werden.
+Letztlich werden 4 ASCII-Zeichen pro 3 Binärbytes in 4 Bytes übertragen.
