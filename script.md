@@ -686,3 +686,15 @@ Sonderzeichen die oberhalb von 127 liegen werden eingeleitet durch ein '=' und d
 erzeigt keinen menschenlesbaren Code,
 da hier dier Datenstrom selbst codiert werden.
 Letztlich werden 4 ASCII-Zeichen pro 3 Binärbytes in 4 Bytes übertragen.
+
+## World Wide Web (www)
+> „The www project is a distributed hypermedia system. In practice, the web is a vast collection of interconnected documents, spanning the world“
+
+Es bassiert auf Client/Server Anwendungen und organisiert sich in Web-Seiten (pages),
+welche untereinander verbunden (verlinkt) sind.
+Die Seite können dabei alle möglichen Varianten von Multimeldialen Inhalten bereithalten.
+Folgendes sind die Komponenten des www:
+ * HTML
+ * HTTP
+ * Web-Server
+ * Web-Browser
