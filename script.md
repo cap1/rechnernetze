@@ -698,3 +698,75 @@ Folgendes sind die Komponenten des www:
  * HTTP
  * Web-Server
  * Web-Browser
+
+#### Hypertext
+Ist ein sog. Hypermedium := Hypertext + Multimedia,
+also der Hypertext und jeweils mindestens ein zeitkontinuierliches und ein zeitdiskretes Medium.
+Der Hypertext bietet die Informationen nicht linear,
+sondern als deliearisiert als vernetztes Dokument.
+Abstrakt gesehen handelt es sich um einen nicht kreisfreien, gerichteten Graphen.
+Dabei werden die Knoten als Objekte
+und die Kanten als Verknüfüungen bezeichnet.
+Durch URLs werden Objekte identifzierbar.
+
+### Universal Resource Locator
+URls erzeugen einen Namesraum, mit dem sich Objekte identifzieren und lokalisieren lassen.
+Das URL-Format kann dabei einfacher un komplexer sein.
+Je nach Kontext können bestimmte Teil weggelassen werden,
+häufig ist das beispielsweise der Port.
+
+> ``<Protokoll>://<host>[:<port]/<path>``
+
+> ``<Protokoll>://<U>:<PWD>@<host>:<port>/<path>?query``
+
+### Hyper Text Transfer Protocol
+> "The Hypertext Transfer Protocol (HTTP) is an application-level protocol for distributed, collaborative hypermedia information systems."
+> (Tim Berners Lee)
+
+Mit diesem zustandslosen Protkoll kommunizieren Clint und Server auf Layer 7.
+Es wurde mittlerweile substantiell erweitert mit REST oder WebDAV.
+
+Bei HTTP werden Requests und Responses ausgetauscht.
+Dabei sind können mittlerweile nicht nur HTML-Seiten sonder auch andere Web-Ressourcen ausgetauscht werden.
+Da HTTP häufig Problemlos durch Firewalls gelangen kann,
+wird es auch häufig als Middleware für andere verteilte Anwendungen eingesetzt.
+
+Das Protokoll ist in 2 Phasen aufgeteilt und belastet durch die Zustandslosigkeit den Server wenig.
+Zustandsinformationen werden als Cookies beim Client abgelegt.
+
+In der ersten Phase baut der Client einen TCP Verbindung zum Server auf.
+Der TCP Port hierfür ist  80.
+Dann wir über diesen Verbindung ein http-request an den Server gesendet
+und eine Webressource angefordert.
+Der Client kann auch Request mit den Kommandos `GET`, `PUT` oder `POST` senden.
+
+In der zweiten Phase antwortet der Server mit einem HTTP-Response.
+Dabei überträgt der die angeforderte Webressource an den Client
+oder eine entsprechende Fehlermeldung.
+In jedemfall wird auch ein HTTP Statuscode übertragen.
+Im Anschluss wird die TCP-Verbindung durch den Server getrennt.
+<!-- TODO Bild RZ Diagramm -->
+
+Im folgenden ein Liste die häufigesten HTTP Statuscodes:
+
+---- ------------------ -----------------------------------
+Code Grund			  		Erklärung
+---- ------------------ -----------------------------------
+200  OK 				 		Der Request wurde erfüllt
+
+201  Created 		 		web-Seite wurde erstellt
+
+202  Accepted		 		Der Request wird bearbeitet
+
+301  Moved 			 		Web-Seite hat neue URL
+
+400  Bad Request 	 		Zeigt einen Syntax-Fehler o.ä. an
+
+401  Unauthorized   		Zugriffsrechte wurden verletzt
+
+402  Payment required 	Kostenpflichtiger Zugriff
+
+404  Not Found 	  		Server kann web-Seite nicht finden
+
+500  Internal Error 		Interner Fehler des Servers
+---- ------------------ -----------------------------------
