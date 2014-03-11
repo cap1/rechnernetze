@@ -770,3 +770,27 @@ Code Grund			  		Erklärung
 
 500  Internal Error 		Interner Fehler des Servers
 ---- ------------------ -----------------------------------
+
+#### REST
+Bei Representational State Transfer wird anstelle einer URL eine URI verwendet.
+Dabei werden die Parameter aber nicht über die URI übergeben,
+wie es bei einer URL der Fall wäre.
+Als Response werden auch XML-Daten erwartet.
+Als weiter Methoden werden auch PUT und DELETE zu verwenden.
+
+#### WebDAV
+WebDAV erlaubt das einbinden von entfernten Dateisystemen in ein lokales
+und wird über HTTP realisiert.
+Das Web-based Distributed Authoring and Versioning,
+erlaubt das transparente einhängen in ein Dateisystem (im Gegensatz zu FTP).
+Für WebDAV gibt es einige zusätzliche Methoden,
+welche der Verwaltung der Daten dienen.
+
+ * *PROPFIND* wird benutzt, um Eigenschaften, abgelegt als XML, einer Ressource zu erfahren. Außerdem wird sie benutzt („überladen“), um die Verzeichnisstruktur eines entfernten Systems in Erfahrung bringen zu können
+  * *PROPPATCH* ändert und löscht mehrere Eigenschaften einer Ressource in einer einzigen Anfrage (einem „atomaren Akt“)
+ * *MKCOL*	erstellt ein Verzeichnis (bei WebDAV „Collection“ genannt)
+* *COPY*	Kopiert eine Ressource, die Dateinamen werden dabei in Form einer URI angegeben
+* *MOVE*	Verschiebt eine Ressource (mit der gleichen Syntax wie COPY)
+* *DELETE*	Löscht eine Ressource (mit der gleichen Syntax wie COPY)
+* *LOCK*	Weist den Webserver an, die Ressource zu sperren. Damit soll verhindert werden, dass die Ressource auf dem Server anderweitig bearbeitet wird, während der anfragende Client das tut.
+* *UNLOCK*	Entfernt die Sperre wieder
