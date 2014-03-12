@@ -882,3 +882,12 @@ Deadlocks durch warten auf Schreibzugriff werden von ihm jedoch nicht bearbeitet
 ### Sicherheit
 NFS Selbe unterstütz eine Verschlüsselung der Daten, diese muss aber gesondert konfiguriert werden.
 NFS kommuniziert nur über priveligiert Ports (<1024) und beim mounten wird der Rechnername gegen ``/etc/hosts.deny`` geprüft.
+
+## Common Gateway Interface
+Das Designziel des CGI war es das sich web-Seiten, also http-responses,
+gemäß den Eingebaben des Benutzers dynamisch verändern zu können.
+Dabei stellt CGI keine Schnittstelle (API) wie eine Protokoll bereit,
+sondern ermöglicht es nur Paramter vom Client an den Server und
+umgekehrt in einem wohldefinierten Format zu senden.
+Es können da auch Programme in vielen verschiedenen Sprachen und Techniken
+gestart werden.
