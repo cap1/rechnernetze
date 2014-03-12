@@ -834,6 +834,12 @@ Die Kommunikation erfolgt über UDP und TCP-Transportprotokolle.
 Dabei gibt es keine Funktionalitäten der ISO-Darstellungsschicht.
 Nur Byteströme sind möglich (wie readf/printf).
 
+In der aktuellen Version 4 (RFC 3530) wird fest der TCP-Port 2049 verwendet.
+UDP wird nichtmehr untersützt.
+Die Verbindung ist nicht mehr zustandslos,
+was gut für die Programmierbarkeit und die Netzwerksicherheit ist,
+aber schlechter für die Fehlertoleranz.
+
 ### Funktionsweise.
 Jede Rechner funktioniert als NFS-Server für seine lokalen Dateien, die er aber auch weider als NFS-Client bei sich einbindet (mounten).
 Entfernte NFS-Server stellen einen Verzeichenisbaum zuf Verfüngung der dann mit Hilfe von NFS-Clients eingehängt werden kann.
@@ -862,6 +868,16 @@ Es basiert wie NFS auf einen Client/Server Modell und ist ebenso als einen Syste
 
 Beim Mount-Vorgang wird dem Client vom Server ein eindeutiger Dateisystem-Steuerblock, ein sog. File-Handle übergeben.
 Dieses wird bei späteren Zugriffen auf den entfernten Verzeichnisbaum immer mit an den Server übergeben.
+
+#### Netzwerk Status-Monitor
+Mit diesem Monitor lässt sich der Zustand eines Rechners (Client und Server).
+Es informiert beispielsweise auch über Neustarts von Rechnern.
+
+#### Netzwerk Lock-Mananger
+Für Raceconditions und exklusiven Zugriff wird der Lock-Manager benötigt.
+Mit ihm wird der exklusive Schreibzugriff auf eine Ressouce möglich.
+Dies wird ermöglich durch wechselseitigen Ausschluss der Klienten.
+Deadlocks durch warten auf Schreibzugriff werden von ihm jedoch nicht bearbeitet, sondern als wird als Programmier/Bedienfehler des Nutzers betrachtet.
 
 ### Sicherheit
 NFS Selbe unterstütz eine Verschlüsselung der Daten, diese muss aber gesondert konfiguriert werden.
