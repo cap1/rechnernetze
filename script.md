@@ -805,3 +805,57 @@ Bei Applets handelt es sich um kleine Anwendungsprogramme die über den Webbrows
 Sie werden verwendet um die Webseite interaktiver zu gestalten.
 Typischerweise sind die Applets in Java oder Javascript geschrieben.
 Wird java verwendet, ist jedoch ein Java-Plugin nötig da sonst die JVM fehlt.
+
+# Middlware für verteilte Anwendungen im Internet
+> Als Middlware wird definiert alsdie Softwareschicht zwischen Betriebssystem und Benutzeranwendung.
+
+Sie stellt die benötoigete Sofware Infrstruktur zur Verfügung die nötig ist, um den Betrieb von verteilten Systeme zu ermöglichen.
+Dabei ist gibt es im Internet eine unüberschaubare Vielzahl von Middlwaresystemen.
+
+Verwendete Technologie:
+ * CGI-Skripte
+ * http und html oder xhtml oder xml
+ * Applets, Java Servlets
+ * Microsoft .net
+ * Webservices
+ * RPCs, RMI (Java)
+ * NFS
+
+Sie laufen dabei alle auf Layer 7 des ISO-OSI Modelles ab.
+
+## Network File System
+Das NFS erlaubt nach einer Initialisierungsphase das transparente Eibinden des entfernten Dateisystems.
+Es wird dabei als virtuelles Dateissystem verwaltet, so dass der Nutzer nicht merkt ob er auf einen entfernten oder lokal Dateisystem arbeitet.
+
+### Merkmale
+NFS ist auch für heterogene Netzwerke geeignet.
+So gibt es konverter wie Samba, mit denen sich auch Windows-Dateisysteme in Linux/Unix Umgebungen einbinden.
+Die Kommunikation erfolgt über UDP und TCP-Transportprotokolle.
+Dabei gibt es keine Funktionalitäten der ISO-Darstellungsschicht.
+Nur Byteströme sind möglich (wie readf/printf).
+
+### Funktionsweise.
+Jede Rechner funktioniert als NFS-Server für seine lokalen Dateien, die er aber auch weider als NFS-Client bei sich einbindet (mounten).
+Entfernte NFS-Server stellen einen Verzeichenisbaum zuf Verfüngung der dann mit Hilfe von NFS-Clients eingehängt werden kann.
+Dei Dateioperationen werden abefangen und aufgeteilt.
+Lokale Operationen werden an die lokalen Datenträger weitergeleitet,
+operationen auf entfernten Datenträgern gehen über den NFS-Client zum NFS-Server.
+Dort werden die Operation auf dem dortige virtuelle Dateisystem ausgeführt.
+Dabei kommen 4 Teilprotkolle zum Einsatz:
+ * Network File System
+ * Mount
+ * Status Monitor
+ * Lock Manager
+
+ #### NFS-Proktoll
+ Dieses Basisprotokoll ermöglich das Erzeugen, Schreibe, Suchen und Lesen von Dateien.
+ Es verwaltet die Authentifizierung und die sog. Dateistatistik.
+ Dabei ist der Server, aus Gründen der Fehlertoleranz zustandslos.
+ Der Server speichert keine Historie der Zugriffswünsche noch eine Status der Erfüllung.
+ Es gibt nur read, write und loockup als Operationen bei entfernten Dateizugriff.
+ Alles weiter regeln die anderen Protokolle.
+
+ #### Mount-Protokoll
+ Mount bindet eine entferntes Datensystem in ein lokales Dateisystem ein.
+ Dabei ist Mount nicht zustandslos, sonder speichert was wo eingehängt wurde.
+ Es basiert wie NFS auf einen Client/Server Modell und ist ebenso als einen System-Deamon realisiert.
