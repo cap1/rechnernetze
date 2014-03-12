@@ -1,4 +1,4 @@
-﻿% Vorlesungen zu Rechnernetze II \
+% Vorlesungen zu Rechnernetze II \
  *Eine Zusammenfassung aus dem Wintersemester 2013/2014*
 % Christian Müller
 
@@ -794,3 +794,14 @@ welche der Verwaltung der Daten dienen.
 * *DELETE*	Löscht eine Ressource (mit der gleichen Syntax wie COPY)
 * *LOCK*	Weist den Webserver an, die Ressource zu sperren. Damit soll verhindert werden, dass die Ressource auf dem Server anderweitig bearbeitet wird, während der anfragende Client das tut.
 * *UNLOCK*	Entfernt die Sperre wieder
+
+### Webbrowser
+Browser stellen HTML Seiten dar, welche sie über HTTP bezogen haben.
+Sie lassen sich durch Plugins erweitern um spezielle Grafik und Multimedia Elemente anzuzeigen.
+Dazu zählt beispielsweise Flash oder Java
+
+##### Applets
+Bei Applets handelt es sich um kleine Anwendungsprogramme die über den Webbrowser bezogen werden.
+Sie werden verwendet um die Webseite interaktiver zu gestalten.
+Typischerweise sind die Applets in Java oder Javascript geschrieben.
+Wird java verwendet, ist jedoch ein Java-Plugin nötig da sonst die JVM fehlt.
