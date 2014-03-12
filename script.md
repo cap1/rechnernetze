@@ -847,15 +847,22 @@ Dabei kommen 4 Teilprotkolle zum Einsatz:
  * Status Monitor
  * Lock Manager
 
- #### NFS-Proktoll
- Dieses Basisprotokoll ermöglich das Erzeugen, Schreibe, Suchen und Lesen von Dateien.
- Es verwaltet die Authentifizierung und die sog. Dateistatistik.
- Dabei ist der Server, aus Gründen der Fehlertoleranz zustandslos.
- Der Server speichert keine Historie der Zugriffswünsche noch eine Status der Erfüllung.
- Es gibt nur read, write und loockup als Operationen bei entfernten Dateizugriff.
- Alles weiter regeln die anderen Protokolle.
+#### NFS-Proktoll
+Dieses Basisprotokoll ermöglich das Erzeugen, Schreibe, Suchen und Lesen von Dateien.
+Es verwaltet die Authentifizierung und die sog. Dateistatistik.
+Dabei ist der Server, aus Gründen der Fehlertoleranz zustandslos.
+Der Server speichert keine Historie der Zugriffswünsche noch eine Status der Erfüllung.
+Es gibt nur read, write und loockup als Operationen bei entfernten Dateizugriff.
+Alles weiter regeln die anderen Protokolle.
 
- #### Mount-Protokoll
- Mount bindet eine entferntes Datensystem in ein lokales Dateisystem ein.
- Dabei ist Mount nicht zustandslos, sonder speichert was wo eingehängt wurde.
- Es basiert wie NFS auf einen Client/Server Modell und ist ebenso als einen System-Deamon realisiert.
+#### Mount-Protokoll
+Mount bindet eine entferntes Datensystem in ein lokales Dateisystem ein.
+Dabei ist Mount nicht zustandslos, sonder speichert was wo eingehängt wurde.
+Es basiert wie NFS auf einen Client/Server Modell und ist ebenso als einen System-Deamon realisiert.
+
+Beim Mount-Vorgang wird dem Client vom Server ein eindeutiger Dateisystem-Steuerblock, ein sog. File-Handle übergeben.
+Dieses wird bei späteren Zugriffen auf den entfernten Verzeichnisbaum immer mit an den Server übergeben.
+
+### Sicherheit
+NFS Selbe unterstütz eine Verschlüsselung der Daten, diese muss aber gesondert konfiguriert werden.
+NFS kommuniziert nur über priveligiert Ports (<1024) und beim mounten wird der Rechnername gegen ``/etc/hosts.deny`` geprüft.
