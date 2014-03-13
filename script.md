@@ -891,3 +891,25 @@ sondern ermöglicht es nur Paramter vom Client an den Server und
 umgekehrt in einem wohldefinierten Format zu senden.
 Es können da auch Programme in vielen verschiedenen Sprachen und Techniken
 gestart werden.
+
+### Erstellen dynamischer Webseiten
+Der Server erzeugt nach der Eingabe im Webformular eine neue Website.
+Siese wird über das CGI-Protokoll zurück an den Client übertragen.
+Der Server schreibt die Seite per ``printg``  auf ``/dev/stdout`` und 
+durch CGI werden die Daten an den Browser des Client übertragen.
+CGI sorgt weiterhin dafür das die Eingabe vom Server über ein einfaches redirect von ``readf`` nach ``stdin`` gelesen werden können.
+
+Die CGI-Anwendungen werden häufig in Skriptsprachen wie Perl ode Python geschrieben da sie eine komfortable String-Verarbeitung ermöglichen.
+
+### Aufruf des CGI-Programms
+Das CGI-Skrip wird über ein HTML-Form aufgerufen, welches die URL des Programms enthält, die Methode (idr POST) und die Prameter, welche in einer HTTP-Response verpackt werden.
+Die Parameter werden dabei als key-value store abgelegt.
+ > ``<INPUT TYPE = "text" NAME = "Straßenname">``
+
+Auch hier wird Quoted Printable Encoding verwendet um Sonderzeichen zu übertragen.
+Bei Formularen die mehere Transaktionen und Webseiten umfassen müssen die Einträge zwischen gespeichert werden.
+Dazu werden Cookies verwendet.
+Auch versteckte Felder, welche dem Nutzer nicht angezeigt werden sind dort abgelegt.
+
+### Cookies
+<!--TODO-->
