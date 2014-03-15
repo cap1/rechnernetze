@@ -912,4 +912,17 @@ Dazu werden Cookies verwendet.
 Auch versteckte Felder, welche dem Nutzer nicht angezeigt werden sind dort abgelegt.
 
 ### Cookies
-<!--TODO-->
+Sie werden über das ``Set-Cookie``  Schlüsselwort um Header der http-Response gesetzt.
+Dabei werden die folgenden Parameter übergeben
+ > ``NAME=VALUE; expires=DATE; path=PATH; domain=DOMAIN_NAME; se-
+cure``
+
+Den Zugriff auf die Cookies bekommt nur eine Webseite bei der das Domainfeld übereinstimmt.
+Dann wird das Cookie automatisch den Server zurückübertragen.
+Nach dem Rücksenden wird das Cookie automatisch in die Umgebungsvariable ``HTTP_COOKIE`` des Server kopiert.
+Der Cookie kann geschrieben werden durch das Set-Cookie-Schlüsselwort im Header der http-Response oder durch ein spezielles HTML-Kommando im Quelltext der dynamischen Webseiten.
+Das Kommando ist Teil der sog. META-tags von html.
+ > ``<META HTTP-EQUIV="FieldName" CONTENT="value">``
+
+Im Fieldname können verschiedene Response-Header-Schlüsselwort angegeben werden,zB auch "set-cookie".
+
