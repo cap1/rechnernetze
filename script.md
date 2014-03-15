@@ -926,3 +926,33 @@ Das Kommando ist Teil der sog. META-tags von html.
 
 Im Fieldname können verschiedene Response-Header-Schlüsselwort angegeben werden,zB auch "set-cookie".
 
+## Remote Procedure Calls
+RPC werden grundsätzlich in einem Rechnernetz verteilt ausgeführt.
+Im einfachsten Fall nach dem Client/Server-Modell,
+aber auch mit Peer-to-Peer.
+
+Zur Durchführung der Kommunikation werden entweder anwendungsspezifische Protkolle, wie ftp, smtp, CGI, Rest, WebDAV, oder Client/Server-Modelle mit Prozedur und Methodenfernaufruf verwendet.
+Dabei realisieren beide Verfahren letztlich einen Botschaftenaustausch nach dem Rendezvous- oder Mailbox-Verfahren.
+_Hier wird nur das Client/Server-Modell mit Personenaufruf diskutiert._
+Dabei sind mindestens auch diese beiden Partner beteiligt.
+Der Server kann dabei auch verteilt implementiert werden
+und die Rechner können heterogen sein.
+
+### Definition & Eigenschaften
+ > "RPCs sind die synchrone Steuerfluss- und Datenübergabe ... zwischen Programmen in Form von Prozeduraufrufen zwischen verschiedenen Adressräumen über einen schmalen Kanal" (Nelson, 1981)
+
+Dabei sind die RPCs wie lokale Prozeduraufrufe blockierend (="synchron"),
+das heisst der Client muss idR bis die Prozedur fertig ist.
+
+RPCs sind sehr verbreitet und sind schon lange verfügbar.
+Wichtig ist, das die Adressräume unterschiedlich ist.
+Daher können keine Pointer als Parameter übergeben werden können.
+Weiterhin sind inkompatabilitäten zu beachten:
+ * Byteandordnung im Wort: Big und Little Endian
+ * Wortandordnung im Adressraum
+ * Ungleiche Wortbreite: 32 Bit - 64 Bit
+ * Repräsentation von Zeichen: ASCII, UTF-8, ISO-8859-1
+ * Stringrepräsentation: Abschluss mit <CR><LF> oder <LF><CR>
+ * Repräsentation von Datenstrukturen: Padding etc.
+
+Auch bei der Rückgabe des Ergebnisses müssen diese Inkompatabilitäten beachtet werden.
