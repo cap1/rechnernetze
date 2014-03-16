@@ -904,7 +904,8 @@ Die CGI-Anwendungen werden häufig in Skriptsprachen wie Perl ode Python geschri
 ### Aufruf des CGI-Programms
 Das CGI-Skrip wird über ein HTML-Form aufgerufen, welches die URL des Programms enthält, die Methode (idr POST) und die Prameter, welche in einer HTTP-Response verpackt werden.
 Die Parameter werden dabei als key-value store abgelegt.
- > ``<INPUT TYPE = "text" NAME = "Straßenname">``
+
+> ``<INPUT TYPE = "text" NAME = "Straßenname">``
 
 Auch hier wird Quoted Printable Encoding verwendet um Sonderzeichen zu übertragen.
 Bei Formularen die mehere Transaktionen und Webseiten umfassen müssen die Einträge zwischen gespeichert werden.
@@ -914,7 +915,7 @@ Auch versteckte Felder, welche dem Nutzer nicht angezeigt werden sind dort abgel
 ### Cookies
 Sie werden über das ``Set-Cookie``  Schlüsselwort um Header der http-Response gesetzt.
 Dabei werden die folgenden Parameter übergeben
- > ``NAME=VALUE; expires=DATE; path=PATH; domain=DOMAIN_NAME; se-
+ >``NAME=VALUE; expires=DATE; path=PATH; domain=DOMAIN_NAME; se-
 cure``
 
 Den Zugriff auf die Cookies bekommt nur eine Webseite bei der das Domainfeld übereinstimmt.
@@ -922,7 +923,8 @@ Dann wird das Cookie automatisch den Server zurückübertragen.
 Nach dem Rücksenden wird das Cookie automatisch in die Umgebungsvariable ``HTTP_COOKIE`` des Server kopiert.
 Der Cookie kann geschrieben werden durch das Set-Cookie-Schlüsselwort im Header der http-Response oder durch ein spezielles HTML-Kommando im Quelltext der dynamischen Webseiten.
 Das Kommando ist Teil der sog. META-tags von html.
- > ``<META HTTP-EQUIV="FieldName" CONTENT="value">``
+
+>``<META HTTP-EQUIV="FieldName" CONTENT="value">``
 
 Im Fieldname können verschiedene Response-Header-Schlüsselwort angegeben werden,zB auch "set-cookie".
 
@@ -939,7 +941,7 @@ Der Server kann dabei auch verteilt implementiert werden
 und die Rechner können heterogen sein.
 
 ### Definition & Eigenschaften
- > "RPCs sind die synchrone Steuerfluss- und Datenübergabe ... zwischen Programmen in Form von Prozeduraufrufen zwischen verschiedenen Adressräumen über einen schmalen Kanal" (Nelson, 1981)
+>"RPCs sind die synchrone Steuerfluss- und Datenübergabe ... zwischen Programmen in Form von Prozeduraufrufen zwischen verschiedenen Adressräumen über einen schmalen Kanal" (Nelson, 1981)
 
 Dabei sind die RPCs wie lokale Prozeduraufrufe blockierend (="synchron"),
 das heisst der Client muss idR bis die Prozedur fertig ist.
