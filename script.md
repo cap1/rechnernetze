@@ -100,14 +100,14 @@ Dies erlaubt auch höhere Kompressionsraten als bei der Huffmann Kodierung.
 Es verwendet jedoch Präfixe von Kodeworten,
 so dass ein Kodewort zugleich auch der Anfang eines anderen Kodewortes sein kann.
 
-## Qullen Kodierung
+## Quellen Kodierung
 Verfahren der Quellen Kodierung können,
 auch in Abhängigkeit von der Wahl der Parameter,
 verlustfrei oder verlustbehaftet sein.
 Die Semantik ist wichtig für die verlustbehaftete Kompression.
 Die Kompressionsraten können aber größer als 10 sein 
 und sind somit geeignet für das Internet.
-Die Kompression beruht oft auf der *Diskreten Cosinus Transformation*
+Die Kompression beruht oft auf der Diskreten Cosinus Transformation (*DCT*)
 und dem Weglassen von Fourierkoeffizienten mit hoher Frequenz und kleiner Amplitude.
 Die Kompression führt bei Bildern zu unschaerfe bei feinen Details,
 was in der Regel kaum auffält sofern nicht zu stark komprimiert wird.
