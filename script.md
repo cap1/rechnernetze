@@ -226,8 +226,10 @@ Somit gehört beim Farbsubsampling jedes Element einer Chrominanzkomponente zu m
 
 ## Dateineinheiten
 Kompressionsalgorithmen können bei JPEG auf 2 Datetypen angewendet werden:
+
  * Einzelne Komponentenelemente
  * einen Block von Komponetenelementen
+
 In den JPEG-Algorithmen wird deshalb allgemein von Dateneinheiten gesprochen (Data Units).
 
 Dabei werden die einzelnen Komponentenelemente nur mit verlustfreier Kompression verarbeitet, einer prädiktiven Vorhersage.
@@ -516,7 +518,7 @@ E-Mail					  Verteilte Dokumentenbearbeitung
 
 Zeitverteilung (ntp)			
 
-telnet
+telnet                 
 ---------------------- -------------------------------
 
 Table: Anwendungen und Diensten auf Layer 7
@@ -578,6 +580,7 @@ autorative Nameserver lösen Konsistenzprobleme auf.
 ### DNS-Query
 Das Query-Protokoll ist eine Datenstrucktur die zwischen Client und Server übertragen wird.
 Diese hat fünf Elementen:
+
  * Query Header - Steuerinformation zum Query
  * Question - eigentliche Anfrage:= Rechnername des Adresse gesucht wird
  * Answer - Resource Record der die Antwort auf die Frage darstellt
@@ -586,6 +589,7 @@ Diese hat fünf Elementen:
 
 ### Aufbau der Ressource Records
 Ressouce Records bestehen aus dem folgenden Fünftupel:
+
  * Owner
  * Type - 16Bit für den Adresstyp
  * Class - 16Bit für Protkollfamilien, (IN=IP)
@@ -596,6 +600,7 @@ Ressouce Records bestehen aus dem folgenden Fünftupel:
 Mit dem Telnet-Dienst kann ein Anwender, mit entsprechender Berechtigung,
 von seinem Rechern asu über das Netz die Leistungen eines anderen Computers nutzen.
 Es verwendet dabei die folgenden drei Konzepte die bei Rechnernetzen immer wieder auftauchen:
+
  * Virtualisierung der Kommunikation, wie Wbebrowser und HTML
  * Verhandelbare Optionene, wie PPP bei DSL
  * Symmetrische Verbindungden, wie bei peer-to-peer
@@ -609,6 +614,7 @@ Der Standard TCP port von Telnet ist 23.
 ## FTP
 Netzwerkprotkoll zur Übertragung von Datein über TCP/IP-Netzwerke.
 Es erlaubt dabei folgenden Funktionen auf entfernten Dateine bzw. Verzeichnissen:
+
  * Senden
  * Empfangen
  * Löschen
@@ -628,6 +634,7 @@ Dadurch lassen sich fehlerhafte Datenübertragungen abbrechen.
 
 Die Datenübertragung mittels FTP ist nicht gesichert.
 Die folgenden Methoden haben sich etabliert um dieses Schwäche zu überkommen:
+
  * Secure FTP - FTP-Steuerung mit Hilfe von SSH
  * FTPS - FTP über SSL, sichert Steuer- und Nutzdaten
  * SCP - Sicher Seuer und Nutzdaten mit SSH
@@ -662,6 +669,7 @@ Bei den Nachrichtentransferagenten handelt es sich um Serverprogramme.
 Sie sorgen für versand und Empfang von Nachrichten.
 Ist in den Ressource Records einer Zone das MX-Feld gesetzt, bezeichnet es den zuständigen Mailserver der Zone.
 Ein Mailserver besteht aus drei Teilen:
+
  * Mailboxen - für jede E-Mail Adresse der Domäne
  * Protkoll zur Kommuniakation mit Benutzern (Useragents)
  * Protokoll zur Kommunikation mit anderen Nachrichtentransferagenten (Mailservern)
@@ -694,6 +702,7 @@ Es bassiert auf Client/Server Anwendungen und organisiert sich in Web-Seiten (pa
 welche untereinander verbunden (verlinkt) sind.
 Die Seite können dabei alle möglichen Varianten von Multimeldialen Inhalten bereithalten.
 Folgendes sind die Komponenten des www:
+
  * HTML
  * HTTP
  * Web-Server
@@ -813,6 +822,7 @@ Sie stellt die benötoigete Sofware Infrstruktur zur Verfügung die nötig ist, 
 Dabei ist gibt es im Internet eine unüberschaubare Vielzahl von Middlwaresystemen.
 
 Verwendete Technologie:
+
  * CGI-Skripte
  * http und html oder xhtml oder xml
  * Applets, Java Servlets
@@ -848,6 +858,7 @@ Lokale Operationen werden an die lokalen Datenträger weitergeleitet,
 operationen auf entfernten Datenträgern gehen über den NFS-Client zum NFS-Server.
 Dort werden die Operation auf dem dortige virtuelle Dateisystem ausgeführt.
 Dabei kommen 4 Teilprotkolle zum Einsatz:
+
  * Network File System
  * Mount
  * Status Monitor
@@ -950,6 +961,7 @@ RPCs sind sehr verbreitet und sind schon lange verfügbar.
 Wichtig ist, das die Adressräume unterschiedlich ist.
 Daher können keine Pointer als Parameter übergeben werden können.
 Weiterhin sind inkompatabilitäten zu beachten:
+
  * Byteandordnung im Wort: Big und Little Endian
  * Wortandordnung im Adressraum
  * Ungleiche Wortbreite: 32 Bit - 64 Bit
